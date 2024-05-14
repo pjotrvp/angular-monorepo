@@ -1,14 +1,28 @@
 import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { NxWelcomeComponent } from './nx-welcome.component';
+import { ProjectsOverviewComponent } from './features/feature-projects/project-list-component/project-list.component';
 
 @Component({
   standalone: true,
-  imports: [NxWelcomeComponent, RouterModule],
+  imports: [RouterModule, ProjectsOverviewComponent],
   selector: 'app-root',
-  templateUrl: './app.component.html',
+  template: `
+    <main>
+      <header class="brand-name">
+        <img
+          class="brand-logo"
+          src="/assets/logo.svg"
+          alt="logo"
+          aria-hidden="true"
+        />
+      </header>
+      <section class="content">
+        <app-projects></app-projects>
+      </section>
+    </main>
+  `,
   styleUrl: './app.component.css',
 })
 export class AppComponent {
-  title = 'portfolio';
+  title = 'Projects';
 }
